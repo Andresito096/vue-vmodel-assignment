@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <title>V-Model Custom Component</title>
     <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div id="app">
         <h1>V-Model Custom Component</h1>
+        <h4>By: Andres Orozco</h4>
         <custom-input v-model="value"></custom-input>
 
         <p>Current value: {{ value }}</p>
@@ -27,7 +30,7 @@
                     props: ['modelValue'],
                     template: `
                          <div>
-                            <input type="text" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)">
+                            <input type="text" style="max-width: 600px;" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)">
                         </div>
                     `
                 }
